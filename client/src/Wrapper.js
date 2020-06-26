@@ -21,48 +21,55 @@ import ManageReviews from './ManageReviews';
 import Reviews from './Reviews';
 import BootcampState from './Context/Bootcamp/BootcampState';
 import ResetCode from './ResetCode';
+import AuthState from './Context/auth/AuthState'
 import { ForgetPassword } from './ForgetPassword';
+import setAuthToken from './common/setAuthToken'
+if (localStorage.token) {
+  setAuthToken(localStorage.token)
+}
 
 // import About from './AboutUs';
 
 const Wrapper = () => {
   return (
-    <BootcampState>
-      <BrowserRouter>
-        {/* <Switch> */}
-        <Route exact path="/" component={Home} />
+    <AuthState>
+      <BootcampState>
+        <BrowserRouter>
+          {/* <Switch> */}
+          <Route exact path="/" component={Home} />
 
-        <Route path="/Signup" component={Register} />
-        <Route path="/LoginForm" component={LoginForm} />
-        <Route path="/ResetRequest" component={ResetRequest} />
-        <Route path="/ResetCode" component={ResetCode} />
-        <Route path="/ForgetPassword" component={ForgetPassword} />
+          <Route path="/Signup" component={Register} />
+          <Route path="/LoginForm" component={LoginForm} />
+          <Route path="/ResetRequest" component={ResetRequest} />
+          <Route path="/ResetCode" component={ResetCode} />
+          <Route path="/ForgetPassword" component={ForgetPassword} />
 
-        <Route path="/account" component={ManageAccount} />
-        <Route path="/UpdatePassword" component={UpdatePassword} />
+          <Route path="/account" component={ManageAccount} />
+          <Route path="/UpdatePassword" component={UpdatePassword} />
 
-        <Route path="/Bootcamp" component={Bootcamp} />
-        <Route path="/Bootcamps" component={Bootcamps} />
-        <Route path="/AddBootcamp" component={AddBootcamp} />
-        <Route path="/NoBootcamp" component={NoBootcamp} />
-        <Route path="/ManageBootcamp" component={ManageBootcamp} />
+          <Route path="/Bootcamp" component={Bootcamp} />
+          <Route path="/Bootcamps" component={Bootcamps} />
+          <Route path="/AddBootcamp" component={AddBootcamp} />
+          <Route path="/NoBootcamp" component={NoBootcamp} />
+          <Route path="/ManageBootcamp" component={ManageBootcamp} />
 
-        <Route path="/Course" component={Course} />
-        <Route path="/NoCourse" component={NoCourse} />
-        <Route path="/AddCourse" component={AddCourse} />
-        <Route path="/ManageCourses" component={ManageCourses} />
+          <Route path="/Course" component={Course} />
+          <Route path="/NoCourse" component={NoCourse} />
+          <Route path="/AddCourse" component={AddCourse} />
+          <Route path="/ManageCourses" component={ManageCourses} />
 
-        <Route path="/Reviews" component={Reviews} />
-        <Route path="/AddRatings" component={AddRatings} />
-        <Route path="/ManageReviews" component={ManageReviews} />
+          <Route path="/Reviews" component={Reviews} />
+          <Route path="/AddRatings" component={AddRatings} />
+          <Route path="/ManageReviews" component={ManageReviews} />
 
-        {/* <Route path="/AboutUs" component={About} /> */}
+          {/* <Route path="/AboutUs" component={About} /> */}
 
-        <Route path="/Contact" component={Contact} />
+          <Route path="/Contact" component={Contact} />
 
-        {/* </Switch> */}
-      </BrowserRouter>
-    </BootcampState>
+          {/* </Switch> */}
+        </BrowserRouter>
+      </BootcampState>
+    </AuthState>
   )
 }
 

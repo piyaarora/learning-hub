@@ -1,56 +1,88 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import AuthContext from './Context/auth/authContext';
 import myimage from './img/education.jpg'
 import './Login.css'
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 
-const Register = () => {
+const Register = (props) => {
+    const authContext = useContext(AuthContext);
 
-    const [formData, setFormData] = useState(
-        {
-            name: '',
-            email: '',
-            password: '',
-            password2: '',
-            role: ''
+    const { register, error, isAuthenticated } = authContext
 
+    const notifyError = (msg) => {
+        toast.error(msg, {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    }
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            props.history.push('/')
         }
-    );
 
-    const { name, email, password, password2, role } = formData
+        if (error) {
+            notifyError("Error while registering")
+        }
+        //eslint-disabled-next-line
+    }, [error, isAuthenticated, props.history])
 
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value })
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        password: '',
+        password2: '',
+        role: ''
+
+    });
+
+
+    const { name, email, password, password2, role } = user
+
+    const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })
 
     const onSubmit = async (e) => {
         e.preventDefault();
         if (password !== password2) {
             console.log('password dont match')
         } else {
-            const newUser = {
+            const register = {
                 name,
                 email,
                 password,
                 role
             }
-            try {
-                const config = {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-                const body = JSON.stringify(newUser);
-                const res = await axios.post('/api/v1/auth/register', body, config);
-                console.log(res.data)
-            } catch (err) {
-                console.error(err.response.data)
-            }
+            console.log("register successfully")
+            // try {
+            //     const config = {
+            //         headers: {
+            //             'Content-Type': 'application/json'
+            //         }
+            //     }
+            //     const body = JSON.stringify(newUser);
+            //     const res = await axios.post('/api/v1/auth/register', body, config);
+            //     console.log(res.data)
+            //     setFormData({
+            //         name: '',
+            //         email: '',
+            //         password: '',
+            //         password2: '',
+            //         role: ''
+            //     })
+            //     props.history.push('/');
+
+
+            // } catch (err) {
+            //     console.error(err.response.data)
+            // }
         }
     }
 
     return (
         <div className="limiter">
             <div className="container-login100">
-
+                <ToastContainer />
                 <div className="wrap-login100">
                     <span className="login100-form-title">
                         Register

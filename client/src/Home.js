@@ -4,7 +4,6 @@ import Rocket from './img/rocket.png';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { Routes } from './common/Routes'
-
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -43,6 +42,7 @@ const Home = () => {
 	console.log("render");
 	return (
 		<div>
+
 			<Navigation />
 			<section className="home-banner-area relative" >
 				<div className="container">
@@ -62,14 +62,16 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className="rocket-img">
 					<img src={Rocket} alt="" />
 					{onscroll}
 				</div>
 			</section>
 			{/* <!-- End Banner Area --> */}
+
 			{/* <!-- Start About Area --> */}
-			<section className="about-area section-gap">
+			<section className="about-area section-gap" id="about-section">
 				<div className="container">
 					<div className="row align-items-center justify-content-center">
 						<div className="col-lg-4 col-md-6 about-left">
@@ -92,7 +94,7 @@ const Home = () => {
 			{/* <!-- End About Area --> */}
 
 			{/* <!-- Start Faculty Area --> */}
-			<section className="faculty-area section-gap">
+			<section className="faculty-area section-gap" id="faculty-section">
 				<div className="container">
 					<div className="row justify-content-center">
 						<div className="col-lg-8">
@@ -185,8 +187,9 @@ const Home = () => {
 				</div>
 			</section>
 			{/* <!-- End Faculty Area --> */}
+
 			{/* <!-- Start Testimonials Area --> */}
-			<section className="testimonials-area section-gap">
+			<section className="testimonials-area section-gap" id="testimonials-section">
 				<div className="container">
 					<div className="testi-slider owl-carousel" data-slider-id="1">
 						<div className="item">
@@ -295,6 +298,7 @@ const Home = () => {
 				</div>
 			</section>
 			<Footer />
+
 		</div>
 	)
 }

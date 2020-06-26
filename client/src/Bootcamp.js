@@ -9,7 +9,6 @@ const Bootcamp = () => {
 			<Navigation />
 			{/* <!-- End Header Area --> */}
 
-
 			{/* <!-- Start Banner Area --> */}
 			<section class="banner-area relative">
 				<div class="container">
@@ -17,13 +16,13 @@ const Bootcamp = () => {
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
 								Code your algorithms
-					</h1>
+							</h1>
 							<p>Learn from basics to advance concepts of Data Structures and algorithms</p>
 							<div class="link-nav">
 								<span class="box">
 									<Link href="#">Home </Link>
 									<i class="lnr lnr-arrow-right"></i>
-									<Link href="blog-home.html">Bootcamps</Link>
+									<Link href="#">Bootcamps</Link>
 									<i class="lnr lnr-arrow-right"></i>
 									<Link href="#">Bootcamp</Link>
 								</span>

@@ -103,7 +103,6 @@ const Bootcamps = () => {
 								<BootcampItem key={bootcamp._id} bootcamp={bootcamp} />
 							))}
 
-
 							{/* **********Pagination********* */}
 							<nav class="blog-pagination justify-content-center d-flex">
 								<ul class="pagination">
@@ -135,18 +134,18 @@ const Bootcamps = () => {
 							<div class="widget-wrap">
 								<div class="single-sidebar-widget search-widget">
 									<form class="search-form" action="#">
-										<input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" />
+										<input placeholder="Search Posts" name="search" type="text" />
 										<button type="submit"><i class="fa fa-search"></i></button>
 									</form>
 								</div>
-								{/* **********blog******** */}
 
+								{/* **********blog******** */}
 								<div class="single-sidebar-widget user-info-widget">
 									<img src="img/blog/user-info.png" alt="" />
 									<Link to="#"><h4>Charlie Barber</h4></Link>
 									<p>
 										Senior blog writer
-										</p>
+									</p>
 									<ul class="social-links">
 										<li><Link to="#"><i class="fa fa-facebook"></i></Link></li>
 										<li><Link to="#"><i class="fa fa-twitter"></i></Link></li>
@@ -154,13 +153,15 @@ const Bootcamps = () => {
 										<li><Link to="#"><i class="fa fa-behance"></i></Link></li>
 									</ul>
 									<p>
-										Learning hub provides the platform where people can search different bootcamps and their courses according to their interest. It provides a great opportunity to learn through courses of different bootcamps online as well as onsite.	</p>
+										Learning hub provides the platform where people can search different bootcamps and their courses according to their interest. It provides a great opportunity to learn through courses of different bootcamps online as well as onsite.
+									</p>
 								</div>
-								{/* **********filter posts******** */}
 
+								{/* **********filter posts******** */}
 								<div class="single-sidebar-widget popular-post-widget">
 									<h4 class="popular-title">Filter Posts</h4>
 									<div class="popular-post-list">
+
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<div class="form-select" id="default-select">
 												<select>
@@ -175,6 +176,7 @@ const Bootcamps = () => {
 												</select>
 											</div>
 										</div>
+
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<div class="form-select" id="default-select">
 												<select>
@@ -190,20 +192,20 @@ const Bootcamps = () => {
 												</select>
 											</div>
 										</div>
+
 										<div class="single-post-list d-flex flex-row align-items-center">
 											<button href="#" class="primary-btn " style={{ margin: 'auto', padding: 'auto' }} >Find Bootcamps</button>
 										</div>
+
 									</div>
 								</div>
 
 								{/* **********add blog******** */}
-
 								<div class="single-sidebar-widget ads-widget">
 									<Link to="#"><img class="img-fluid" src="img/blog/ads-banner.jpg" alt="" /></Link>
 								</div>
 
 								{/* **********newsletter******** */}
-
 								<div class="single-sidebar-widget newsletter-widget">
 									<h4 class="newsletter-title">Newsletter</h4>
 									<p>
@@ -216,23 +218,22 @@ const Bootcamps = () => {
 													<div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i>
 													</div>
 												</div>
-												<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
-													onblur="this.placeholder = 'Enter email'" />
+												<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" />
 											</div>
 										</div>
 										<Link to="#" class="bbtns">Subcribe</Link>
 									</div>
 									<p class="text-bottom">
 										You can unsubscribe at any time
-										</p>
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section >
+			</section>
 			<Footer />
-		</div >
+		</div>
 	)
 }
 
